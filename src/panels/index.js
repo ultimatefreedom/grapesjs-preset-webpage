@@ -3,7 +3,8 @@ import {
   cmdDeviceDesktop,
   cmdDeviceTablet,
   cmdDeviceMobile,
-  cmdClear
+  cmdClear,
+  cmdSave
 } from './../consts';
 
 export default (editor, config) => {
@@ -62,6 +63,10 @@ export default (editor, config) => {
       id: cmdClear,
       className: 'fa fa-trash',
       command: e => e.runCommand(cmdClear),
+    },{
+      id: cmdSave,
+      className: 'fa fa-save',
+      command: e => e.runCommand(cmdSave),
     }],
   },{
     id: 'views',
