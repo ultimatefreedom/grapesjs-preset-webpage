@@ -4,4 +4,5 @@ export const
   cmdDeviceTablet = 'set-device-tablet',
   cmdDeviceMobile = 'set-device-mobile',
   cmdClear = 'canvas-clear',
-  cmdSave = "save-code";
+  cmdSave = "save-code",
+  cmdExit = 'exit'

@@ -4,7 +4,8 @@ import {
   cmdDeviceTablet,
   cmdDeviceMobile,
   cmdClear,
-  cmdSave
+  cmdSave,
+  cmdExit
 } from './../consts';
 
 export default (editor, config) => {
@@ -67,6 +68,10 @@ export default (editor, config) => {
       id: cmdSave,
       className: 'fa fa-save',
       command: e => e.runCommand(cmdSave),
+    },{
+      id: cmdExit,
+      className: 'fa fa-close',
+      command: e => e.runCommand(cmdExit),
     }],
   },{
     id: 'views',
