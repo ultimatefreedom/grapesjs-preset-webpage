@@ -2,6 +2,8 @@ export default (editor, config) => {
   const bm = editor.BlockManager;
   const toAdd = name => config.blocks.indexOf(name) >= 0;
 
+
+  
   toAdd('link-block') && bm.add('link-block', {
     category: 'Basic',
     label: 'Link Block',

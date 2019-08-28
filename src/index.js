@@ -16,6 +16,13 @@ import styles from './styles';
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
 
+
+  let allbasicbocks = ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'];
+
+
+  let landingpagebasicblocks = ['column1', 'column2', 'column3', 'column3-7', 'text', 'image', 'video'];
+  console.log("initialize preset with config", config);
+
   let defaults = {
     // Which blocks to add
     blocks: ['link-block', 'quote', 'text-basic'],
@@ -92,6 +99,19 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     filestackOpts: 0,
   };
 
+
+  if (config.type === "LandingPage") {
+    defaults.blocks = [];
+    defaults.navbarOpts = false;
+    defaults.formsOpts = false;
+    defaults.countdownOpts = false;
+    defaults.aviaryOpts = false;
+    defaults.blocksBasicOpts.blocks = landingpagebasicblocks;
+  } else {
+    //load everything
+
+    //defaults.blocksBasicOpts.blocks = allbasicbocks;
+  }
   // Load defaults
   for (let name in defaults) {
     if (!(name in config))
@@ -107,6 +127,8 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     aviaryOpts,
     filestackOpts
   } = config;
+
+  console.log("config", config);
 
   // Load plugins
   blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
