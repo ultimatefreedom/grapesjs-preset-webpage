@@ -6,7 +6,8 @@ import {
   cmdDeviceMobile,
   cmdClear,
   cmdSave,
-  cmdExit
+  cmdExit,
+  cmdToggle
 } from './../consts';
 
 export default (editor, config) => {
@@ -20,5 +21,6 @@ export default (editor, config) => {
   cm.add(cmdClear, e => confirm(txtConfirm) && e.runCommand('core:canvas-clear'));
   cm.add(cmdSave, e => console.log("save-code")); //, e => code") );
   cm.add(cmdExit, e => console.log("exit")); //, e => code") );
+  cm.add(cmdToggle, e => console.log('toggle'));
 
 }

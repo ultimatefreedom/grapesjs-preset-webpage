@@ -37,3 +37,16 @@ module.exports = (env = {}) => {
     plugins: plugins,
   };
 }
+
+/*
+optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        }
+      })
+    ]
+  }*/

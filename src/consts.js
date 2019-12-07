@@ -5,4 +5,5 @@ export const
   cmdDeviceMobile = 'set-device-mobile',
   cmdClear = 'canvas-clear',
   cmdSave = "save-code",
-  cmdExit = 'exit'
+  cmdExit = 'exit',
+  cmdToggle = 'toggle'

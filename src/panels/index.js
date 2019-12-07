@@ -5,7 +5,8 @@ import {
   cmdDeviceMobile,
   cmdClear,
   cmdSave,
-  cmdExit
+  cmdExit,
+  cmdToggle
 } from './../consts';
 
 export default (editor, config) => {
@@ -22,6 +23,8 @@ export default (editor, config) => {
   const ful = 'fullscreen';
   const prv = 'preview';
 
+  console.log("preset loading");
+
   eConfig.showDevices = 0;
 
   pn.getPanels().reset([{
@@ -30,6 +33,11 @@ export default (editor, config) => {
   },{
     id: 'options',
     buttons: [{
+      id: cmdToggle,
+      className: 'fa fa-eye',
+      command: e=> e.runCommand(cmdToggle),
+    },
+    {
       id: swv,
       command: swv,
       context: swv,
